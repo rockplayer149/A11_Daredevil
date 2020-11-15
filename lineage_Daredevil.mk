@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-COMMON_PATH := device/nokia/sdm660-common
+COMMON_PATH := device/nokia/Daredevil
 
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
@@ -179,3 +179,21 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/wifi/hostapd.accept:system/etc/hostapd/hostapd.accept \
     $(COMMON_PATH)/wifi/hostapd.deny:system/etc/hostapd/hostapd.deny \
     $(COMMON_PATH)/wifi/hostapd.conf:system/etc/hostapd/hostapd_default.conf
+
+# Device identifiers
+PRODUCT_NAME := lineage_Daredevil
+PRODUCT_BRAND := Nokia
+PRODUCT_DEVICE := Daredevil
+PRODUCT_MANUFACTURER := HMD Global
+PRODUCT_MODEL := Nokia 7.2
+
+PRODUCT_GMS_CLIENTID_BASE := android-nokia
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    TARGET_DEVICE="Daredevil" \
+    PRODUCT_NAME="Daredevil" \
+    PRIVATE_BUILD_DESC="m690-user 10 QKQ1.191014.001 00WW_2_250 release-keys"
+
+BUILD_FINGERPRINT := Nokia/Daredevil_00WW/DDV_sprout:10/QKQ1.191014.001/00WW_2_250:user/release-keys
+
+TARGET_VENDOR := nokia
