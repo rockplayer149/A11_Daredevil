@@ -21,7 +21,7 @@ COMMON_PATH := device/nokia/Daredevil
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/nokia/sdm660-common/sdm660-common-vendor.mk)
+$(call inherit-product, vendor/nokia/Daredevil/Daredevil-vendor.mk )
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -68,15 +68,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/audio/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml
 
-# Boot Control
-PRODUCT_PACKAGES_DEBUG += \
-    bootctl
-
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
+# Boot Control HAl
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.0-impl.recovery \
     bootctrl.sdm660 \
-    libcutils \
-    libgptutils \
-    libz
+    bootctrl.sdm660.recovery
 
 # Camera
 PRODUCT_PACKAGES += \
